@@ -5,9 +5,9 @@ router.get('/all', (req, res) =>
     res.send('shop test is successful')
 });
 
-router.post('shopposttest', (req, res)=>{
+router.post('/shops', (req, res)=>{
     const shopname = req.body.shopname;
-    console.log(shopname);
+    res.send(shopname);
 }); 
 
 module.exports = router;

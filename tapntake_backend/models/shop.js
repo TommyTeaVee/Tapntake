@@ -1,16 +1,16 @@
 const mongoose = require('mongoose')
 
+
+
 const shopSchema = new mongoose.Schema({
-    shopname:{
+    shopname: String,
+    image: String,
+    description: String,
+    email:{
         type: String,
         required: true
-    },
-    productList:[{
-        productname: String,
-        productdiscription: String,
-        price: Number
-    }]
+    }
     
 })
 
-module.exports = mongoose.model('Shop', shopSchema ) 
+module.exports = mongoose.model('shop', shopSchema ) 
