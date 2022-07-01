@@ -55,7 +55,7 @@
     
   }
   .imgText span{
-    font-size: 2rem;
+    font-size: 1.rem;
     line-height: 60px;
   }
   .wrapper{
@@ -70,5 +70,39 @@
     line-height: 60px;
     padding-right:2rem;
 }
+.search { 
+  position: relative; 
+  margin: 0 auto ;
+  text-align: center;
+}
+.bi-search{
   
- 
+}
+.search .bi-search { 
+  position: absolute;
+  top: 18%;
+  left: 2px;
+  font-size: 1.2rem;
+  
+}
+.form-control{
+  padding-left: 1.5rem;
+  border:inherit;
+}
+.bi-house-door{
+  font-size: 2rem;
+}.bi-bag{
+  font-size: 2rem;
+}.bi-heart{
+  font-size: 2rem;
+}.bi-person-fill{
+  font-size: 2rem;
+}
+
+@media (min-width: 768px)() {
+  
+}
+
+#myCarousel{
+  height: 00px;
+}
