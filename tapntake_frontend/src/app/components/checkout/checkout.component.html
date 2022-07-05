@@ -37,34 +37,40 @@
                   </div>
             </div>
 
-            <div  [formGroup]="userForm" (ngSubmit)="login()" class="form">
+            <div  [formGroup]="userForm" (ngSubmit)="login()" class=" col-xs-6 form">
         
 
-                <div class="col">
+                
                 <label for="username">Email:</label>
-                <input type="text" formControlName="email" placeholder="Email"  id="username"  >
+                <input type="text" formControlName="email" placeholder="Email"  id="email"  >
                 <span *ngIf="!userForm.controls['email'].valid && userForm.controls['email'].touched">*Email is required</span>
-                </div>
+                
         
-                <div class="col">
+                
                     <label for="password">Name:</label>
-                    <input type="password" formControlName="password" placeholder="Password" id="password" >
+                    <input type="password" formControlName="password" placeholder="Password" id="name" >
                     <span *ngIf="!userForm.controls['password'].valid && userForm.controls['password'].touched">*Password is required</span>
-                </div>
+                
                 
                 <div class="col">
-                    
-                </div>
-                
-                <div class="btns">
-                <input type="submit" value="Login" class="btn btn-primary btn-large btn-block px-2 mt-3 btn1" [disabled]="userForm.invalid" (click)="login()" >
-                
-                </div>
+                  <label for="password">Choose Pick-up Time & Date</label>
+                  <div class=" d-flex justify-content-start dp">
+                    <div class="input-append date" id="dp3" data-date-format="dd-mm-yyyy">  
+                      <input class="span2" size="10" type="date" value="" id="date">  <span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                    <div class="time ml-1">
+                      <input type="time" name="" id="time"><span class="add-on"><i class="icon-th"></i></span>
+                    </div>
+                    </div>
+                  </div>
               
             </div>
             
               
-
+            <div class=" col-12 mt-2 cc d-flex justify-content-between">
+              <button type="button" class="btn btn-primary btn1">Button</button>
+              <button type="button" class="btn btn-primary btn0">Button</button>
+            </div>
 
 
         </div>
