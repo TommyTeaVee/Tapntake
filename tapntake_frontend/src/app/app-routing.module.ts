@@ -4,17 +4,19 @@ import { HomeComponent } from './components/home/home.component';
 import { ShopmenuComponent } from './components/shopmenu/shopmenu.component';
 import {CartComponent} from './components/cart/cart.component'
 import { CheckoutComponent } from './components/checkout/checkout.component';
+
 // import {OrderComponent} from './components/order/order.component'
 // import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 
 const routes: Routes = [
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
     path:'home',component:HomeComponent
   },
   {
-    path:'shopmenu',component:ShopmenuComponent
+    path:'menu/:id',component:ShopmenuComponent
   },
   {
     path:'cart', component:CartComponent
@@ -22,6 +24,7 @@ const routes: Routes = [
   {
     path:'checkout', component: CheckoutComponent
   },
+  
   
 ];
 

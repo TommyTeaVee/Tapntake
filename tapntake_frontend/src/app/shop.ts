@@ -2,9 +2,8 @@ import { Product } from "./product";
 
 
 export interface Shop {
-    shopId: number;
-    name: string;
-    description: string;
-    image:string;
-    productList?:[Product];
+  id?: any;
+  name?: string;
+  img?: string;
+  email?: string;  
   }

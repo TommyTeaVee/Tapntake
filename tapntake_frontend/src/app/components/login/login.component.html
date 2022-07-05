@@ -1,0 +1,48 @@
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark  bg-light
+        ">
+          <div class="container mx-5 my-2">
+            <a class="navbar-brand">SSVK</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav m-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                  
+                </li>
+                
+              </ul>
+              
+              <a class="nav-link active" aria-current="page" routerLink="/register">Register</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      
+
+
+   
+    <div  [formGroup]="userForm" (ngSubmit)="login()"class="form">
+        
+
+        <div class="col">
+        <label for="username">Email:</label>
+        <input type="text" formControlName="email" placeholder="Email"  id="username"  >
+        <span *ngIf="!userForm.controls['email'].valid && userForm.controls['email'].touched">*Email is required</span>
+        </div>
+
+        <div class="col">
+            <label for="password">Password:</label>
+            <input type="password" formControlName="password" placeholder="Password" id="password" >
+            <span *ngIf="!userForm.controls['password'].valid && userForm.controls['password'].touched">*Password is required</span>
+        </div>
+        
+        <div class="btns">
+        <input type="submit" value="Login" class="btn btn-primary btn-large btn-block px-2 mt-3 btn1" [disabled]="userForm.invalid" (click)="login()" >
+        
+        </div>
+      
+    </div>
+</body>

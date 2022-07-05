@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -14,6 +13,8 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { SearchComponent } from './components/search/search.component';
 import { GetstartedComponent } from './components/getstarted/getstarted.component';
 import { ErrorComponent } from './components/error/error.component';
+// import { LoginComponent } from './components/login/login.component';
+// import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +27,17 @@ import { ErrorComponent } from './components/error/error.component';
     ThankyouComponent,
     SearchComponent,
     GetstartedComponent,
-    ErrorComponent
+    ErrorComponent,
+    // LoginComponent,
+    // RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
