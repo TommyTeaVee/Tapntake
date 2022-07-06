@@ -10,12 +10,14 @@ import { CartService } from 'src/app/services/cart.service';
   styleUrls: ['./shopmenu.component.css']
 })
 export class ShopmenuComponent implements OnInit {
-
+  public totalItems :any
   products: Product[] = []
   constructor( private productService: ProductsService, private route: ActivatedRoute, private cartService: CartService) { }
 
   ngOnInit(): void {
     this.getAll()
+    this.totalItems = this.cartService.getItems()
+    this.totalItems.length
   }
   addToCart(product: Product) {
 

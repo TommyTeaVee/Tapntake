@@ -4,4 +4,6 @@ export class Product {
   img?: string;
   price?: number;
   shopId?: string;
+  qty?:number
+  des?:string
 }

@@ -35,7 +35,9 @@ exports.create = (req, res) => {
                 name: req.body.name,
                 img: req.body.img,
                 price: req.body.price,
-                shopId: data.id
+                shopId: data.id,
+                qty:req.body.qty,
+                dec:req.body.dec
             })
     
             product.save(product)

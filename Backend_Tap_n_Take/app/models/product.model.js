@@ -4,7 +4,12 @@ module.exports = mongoose => {
             name: String,
             img: String,
             price: Number,
-            shopId: String
+            shopId: String,
+            qty:{
+                type:String,
+                default:1
+            },
+            dec:String
         },
         { timestamps: true }
     );

@@ -13,6 +13,7 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { SearchComponent } from './components/search/search.component';
 import { GetstartedComponent } from './components/getstarted/getstarted.component';
 import { ErrorComponent } from './components/error/error.component';
+import { FooternavComponent } from './components/footernav/footernav.component';
 // import { LoginComponent } from './components/login/login.component';
 // import { RegisterComponent } from './components/register/register.component';
 
@@ -28,6 +29,7 @@ import { ErrorComponent } from './components/error/error.component';
     SearchComponent,
     GetstartedComponent,
     ErrorComponent,
+    FooternavComponent,
     // LoginComponent,
     // RegisterComponent
   ],

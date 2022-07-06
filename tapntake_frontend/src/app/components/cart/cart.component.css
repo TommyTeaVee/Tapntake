@@ -28,6 +28,10 @@ button{
     border-radius: .5em;
     color: #ffffff;
 }
+.checkout{
+  width: 750px;
+  height: 30px;
+}
 
 main{
     margin-top: 5rem;

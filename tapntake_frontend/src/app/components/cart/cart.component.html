@@ -19,12 +19,12 @@
 
 <main>
     <div class="container main px-4">
-      <div class="row wrapper ">
-        <div class="col-12 col-sm-4 col-md-4 b-4 myb">
+      <div class="row wrapper" *ngFor="let item of items;let i=index ">
+        <div class="col-10 col-sm-4 col-md-4 b-4 myb">
             <div class="card shadow-sm">
                 <div class="pw">
                     <div class="pwc">
-                        <img src="https://s3-alpha-sig.figma.com/img/54d8/c380/757464332a0c984f0337c4fed8633969?Expires=1657497600&Signature=eo3XluJeCHgCjcdtHisSIaw2a36ULMAcN4BjRVGqapBsjqDBSkhnq~n7uQO1otxv6i4jpU7Tmn2PkVKzejVfKSJl4vNDjZpxngIR00Bb2U2pbhj897yk3mxWbr0jzYrJLPaBdjRbcdUS-sSfhrbdA7ISgYNKgGD8t51fH9vJkchalPbM6enAZ9kw~g~~fm3E~NsAocAlUq9hMDCEqodaZsXKuRsG6QDwNOESuDoY1J-ys6sBionKhJPJki2Vxfy0CyOEIjJiYK9lOX5UxnZp2hSWRhcFpJxsqwOfe1zVICgJtjS7NESA56UxGVwMgFEujFlTt5C7Y5HH9v8xUCANuA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA" class="img-fluid thumbnail-image" alt="">
+                        <img src={{item.img}} class="img-fluid thumbnail-image" alt="">
                     </div>
                     
                 </div>
@@ -32,18 +32,18 @@
             </div>
             <div class="col-sm-8">
                 <div class="card-body p-1">
-                    <p class="card-text">Can Coke 400ml</p>
-                    <p>This is reserved for product description</p>
+                    <p class="card-text">{{item.name}}</p>
+                    <p>{{item.dec}}</p>
                     <div class="d-flex justify-content-between align-items-center">
-                      <h2 class="price">R12</h2>
+                      <h2 class="price">{{item.price}}</h2>
                       <div class="btn-group justify-content-between">
-                        <button class="btn btn-sm"><i class="bi bi-plus-square"></i></button>
-                        <input type="number" class="" value="1" maxlength="5">
-                        <button class="btn btn-sm"><i class="bi bi-plus-square"></i></button>
+                        <button class="btn btn-sm"(click)="decr(item.qty, i)"><i class="bi bi-plus-square"></i></button>
+                        <input type="number" class="" min="1" max="5" [(ngModel)]="item.qty"  (ngModelChange)="qntUpdate($event)">
+                        <button class="btn btn-sm"><i class="bi bi-plus-square" (click)="incre(item.qty, i)"></i></button>
                         
                         
                       </div>
-                      <button type="button" class="btn btn-outline-danger btn-xs">
+                      <button type="button" class="btn btn-outline-danger btn-xs" (click)="deletei(i)">
                         <i class="bi bi-trash-fill" aria-hidden="true"></i>
                       </button>
                       
@@ -57,27 +57,22 @@
 
         </div>
     
-        
+        <hr>
+                <div class="card-footer">
+                  <div class="pull-right">
+                    
+                    <h4> Total Amount: <b>R{{totalAmount}}</b></h4>
+                 </div>
+                  <div class="footr" style="margin: 5px">
+                      <button class="btn btn-warning checkout" [disabled]="totalAmount === 0">Checkout</button>
+                     
+                  </div>
+                </div>
           </div>
        
   </main>
 
   <!-- footer -->
-
-  <div class="footer sticky mt-auto pt-1 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col d-flex justify-content-between d-block d-sm-none">
-          <i class="bi bi-house-door"></i>
-          <i class="bi bi-bag"></i>
-          <i class="bi bi-heart"></i>
-          <i class="bi bi-person-fill"></i>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
   <div class="footer sticky mt-auto pt-1 bg-light">
     <div class="container">
       <div class="row">
