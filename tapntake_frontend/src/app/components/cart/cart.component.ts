@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product';
 import { CartService } from '../../services/cart.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CheckoutComponent } from '../../components/checkout/checkout.component'
 
 @Component({
   selector: 'app-cart',
@@ -13,7 +14,7 @@ export class CartComponent implements OnInit {
   total:any
   items: any
   totalAmount = this.cartService.totalAmount
-  constructor(private cartService: CartService, private router : Router) { }
+  constructor(private cartService: CartService, private router : Router, private activated: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getItems()
@@ -22,13 +23,12 @@ export class CartComponent implements OnInit {
   getItems(){
     
         this.items = this.cartService.getItems();
-    
   }
   Total() {
     this.totalAmount = 0
     this.items.forEach((item: { qty: number; price: number; }) => {
       this.totalAmount += (item.qty * item.price)
-  
+      localStorage.setItem('Total',JSON.stringify(this.totalAmount))
     })
   }
   deletei(i: number): void {

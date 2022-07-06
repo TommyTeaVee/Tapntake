@@ -64,7 +64,7 @@
                     <h4> Total Amount: <b>R{{totalAmount}}</b></h4>
                  </div>
                   <div class="footr" style="margin: 5px">
-                      <button class="btn btn-warning checkout" [disabled]="totalAmount === 0">Checkout</button>
+                      <button class="btn btn-warning" routerLink="/checkout" checkout="totalAmount === 0">Checkout</button>
                      
                   </div>
                 </div>

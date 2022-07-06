@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder,FormControl,FormControlName,FormGroup,Validators } from '@angular/forms';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-login',
@@ -15,12 +16,14 @@ export class CheckoutComponent implements OnInit {
       Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"),
    
   ])
-  }); 
+  });
+  servicefee  = 2
+  totalAmount = JSON.parse(`${localStorage.getItem('Total')}`) 
   token:any
   email: any
   name: any
   date: any
-  constructor(private router : Router) { }
+  constructor(private router : Router, private cartService: CartService) { }
 
   ngOnInit(): void {
    
