@@ -13,8 +13,8 @@
   </header>
 
   <main>
-    <div class="container main px-4 pt-1">
-        <h1>Confirm order</h1>
+    <div class="container main px-4">
+        <h4>Confirm order</h4>
       <div class="row wrapper ">
         <div class="col-8 col-sm-4 col-md-4 b-4 myb">
           <div class="card ">
@@ -23,7 +23,7 @@
             
           </div>
             </div>
-            <div class="col-sm-8 my-4">
+            <div class="col-sm-8 my-2">
                 <div class="card-body p-1">
                     <p class="">Subtotal: {{totalAmount}}</p>
                     <p class="red">Service Fee: {{servicefee}}</p>
@@ -33,31 +33,25 @@
             </div>
 
             <form [formGroup]="userForm"  method="post" (ngSubmit)="onSubmit()" class=" col-xs-6 form mt-2">
+                <div class = "contactwrapper">
+
+                
                 <label for="email">Email:</label>
                 <input type="email" [formControl]="email" placeholder="Email"  id="email"  >
                 <span *ngIf="email.invalid">*Email is required</span>
               
                     <label for="name">Name:</label>
                     <input type="text" [formControl]="name" placeholder="name" id="name" >
-                    <span *ngIf="name.invalid">*Name is required</span>
+                    <span *ngIf="name.invalid"></span>
                     
                     <label for="number">Number:</label>
                     <input type="number" [formControl]="number" placeholder="Number" id="number" >
                     <span *ngIf="number.invalid">*Number is </span>
                 
                 
-                <div class="col">
-                  <label for="password">Choose Pick-up Time & Date</label>
-                  <div class=" d-flex justify-content-start dp">
-                    <div class="input-append date" id="dp3" data-date-format="dd-mm-yyyy">  
-                      <input class="span2" size="10" type="date" value="" id="date">  <span class="add-on"><i class="icon-th"></i></span>
-                    </div>
-                    <div class="time ml-1">
-                      <input type="time" name="" id="time"><span class="add-on"><i class="icon-th"></i></span>
-                    </div>
-                    </div>
+                
                   </div>
-                  <div class="col-12 mt-2 cc d-flex justify-content-between align-items-center mt-3">
+                  <div class="col-12 mt-2 cc d-flex justify-content-between align-items-center mt-2">
                     <button [disabled]="isLoading" class="submit" type="submit" class="btn btn-primary btn1">Submit</button>
                     <button [formControl]="honeypot" class="hidden" type="text" class="btn btn-primary btn0">Cancel</button>
                   </div>

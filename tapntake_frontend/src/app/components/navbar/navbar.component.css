@@ -1,0 +1,38 @@
+.tntlogo{
+    width:75px;
+    height:30px;
+  } 
+  .bi-arrow-right{
+    font-size: 1.5rem;
+    float: right;
+    color: rgb(255, 255, 255);
+    font-weight:bold;
+    line-height: 2rem;
+    padding-right:2rem;
+  }
+  .search { 
+  position: relative; 
+  margin: 0 auto ;
+  text-align: center;
+  
+  }
+  
+  .searchwarapper{
+    
+    width: 140px;
+    
+
+  }
+  
+  .search .bi-search { 
+  position: absolute;
+  top: 12%;
+  left: 2px;
+  font-size: 1.2rem;
+  
+  }
+  .form-control{
+  padding-left: 1.5rem;
+  border:inherit;
+  font-size: 0.9rem;
+  }

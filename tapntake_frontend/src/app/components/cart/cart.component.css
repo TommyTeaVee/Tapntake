@@ -31,6 +31,8 @@ button{
 .checkout{
   width: 75px;
   height: 30px;
+  color: white;
+  background-color: #1D3557;
 }
 
 main{
