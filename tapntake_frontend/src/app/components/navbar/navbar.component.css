@@ -10,6 +10,9 @@
     line-height: 2rem;
     padding-right:2rem;
   }
+  .navbar-nav{
+    
+  }
   .search { 
   position: relative; 
   margin: 0 auto ;
@@ -35,4 +38,7 @@
   padding-left: 1.5rem;
   border:inherit;
   font-size: 0.9rem;
+  }
+  a, a:visited, a:hover, a:active {
+    color: inherit;
   }

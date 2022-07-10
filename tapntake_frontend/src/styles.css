@@ -3,7 +3,6 @@
 body{
     background-color: #FBFFFA;
 }
-a:visited{
-    text-decoration: none;
-    text-decoration-line: none;
-}
+a, a:visited, a:hover, a:active {
+    color: inherit;
+  }
