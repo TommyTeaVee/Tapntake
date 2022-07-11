@@ -10,9 +10,15 @@
     line-height: 2rem;
     padding-right:2rem;
   }
-  .navbar-nav{
-    
+
+  li {
+    float: left;
   }
+
+li a {
+  display: block;
+  padding: 8px;
+}
   .search { 
   position: relative; 
   margin: 0 auto ;

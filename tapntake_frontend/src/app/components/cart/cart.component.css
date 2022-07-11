@@ -2,7 +2,7 @@
     margin-top: 4.5rem;
 }
 input{
-    width: 35px;
+    width: 25px;
     text-align: center;
     font-size: larger;
     border:inherit;
@@ -21,8 +21,8 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0; 
 }
 button{
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
     background-color: #e25300;
     border:inherit;
     border-radius: .5em;
@@ -155,10 +155,11 @@ main{
      }.bi-person-fill{
      font-size: 1.5rem;
      }
-     .btn-sm{
+     .btn-xs{
+       
        outline: none;
      }
-     .btn-sm:active{
+     .btn-xs:active{
        border: inherit;
        outline: none;
      }
@@ -199,17 +200,17 @@ main{
      .myb{
        border-radius: 20px
      }
-     /* .pw{
+     .pw{
       padding: 0.5rem;
      }
      .pwc{
        box-sizing: border-box;
        border-radius: 20px;
-       width: 100%;
        background-color: #F8F0F0;
-       position: relative;
-       overflow: hidden;
-     } */
+       
+       display: flex;
+       justify-content: center;
+     }
      .price{
        line-height: 2rem;
        font-size: 20px;
@@ -218,3 +219,20 @@ main{
      /* .bi-plus-square{
        font-size: 1.5rem;
      } */
+
+     .card img{
+      border-radius: 10px;
+    }
+    .card-body{
+      padding-top: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-bottom: 0;
+    }
+   .card-text{
+    font-size: .9rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    
+    
+   }

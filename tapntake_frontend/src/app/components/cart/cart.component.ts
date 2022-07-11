@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../../product';
 import { CartService } from '../../services/cart.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { CheckoutComponent } from '../../components/checkout/checkout.component'
 
 @Component({
@@ -14,7 +15,10 @@ export class CartComponent implements OnInit {
   total:any
   items: any
   totalAmount = this.cartService.totalAmount
-  constructor(private cartService: CartService, private router : Router, private activated: ActivatedRoute) { }
+  constructor(private cartService: CartService, 
+    private router : Router, 
+    private activated: ActivatedRoute,
+    private location: Location) { }
 
   ngOnInit(): void {
     this.getItems()
@@ -55,5 +59,9 @@ export class CartComponent implements OnInit {
     this.items.length
     this.Total();
    
+  }
+
+  goBack(){
+    this.location.back()
   }
 }
