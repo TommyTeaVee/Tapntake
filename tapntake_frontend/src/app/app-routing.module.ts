@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ShopmenuComponent } from './components/shopmenu/shopmenu.component';
 import {CartComponent} from './components/cart/cart.component'
 import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ThankyouComponent } from './components/thankyou/thankyou.component';
 
 // import {OrderComponent} from './components/order/order.component'
 // import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -25,7 +26,7 @@ const routes: Routes = [
     path:'checkout', component: CheckoutComponent
   },
   {
-    path:'thankyou', component: CheckoutComponent
+    path:'thankyou', component: ThankyouComponent
   },
   
   

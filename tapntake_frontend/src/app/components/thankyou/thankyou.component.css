@@ -42,10 +42,8 @@ height: 50px;
 background-color: 1D3557 !important;
 } */
 .container{
-    display: flex;
-    justify-content: center;
-    height: 100vh;
-    padding-top: 20%;
+    flex-direction: column;
+
 
 }
 img{
@@ -65,16 +63,12 @@ h5{
     
 }
 .btn-primary{
+margin-top: 3rem;
 background-color: #1D3557;
-margin-top: 30px;
-margin-left: 35px;
-
-font-family: Roboto;
 font-size: 24px;
 font-weight: 500;
 line-height: 28px;
 letter-spacing: 0em;
-text-align: right;
 border-radius: 50px;
 
 }

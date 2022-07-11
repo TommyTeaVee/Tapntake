@@ -37,13 +37,13 @@
                     <div class="d-flex justify-content-between align-items-center">
                       <h2 class="price">{{item.price | currency:'R'}}</h2>
                       <div class="btn-group justify-content-between">
-                        <button class="btn btn-xs"(click)="decr(item.qty, i)"><i class="bi bi-dash"></i></button>
+                        <button class="btn btn-xs"(click)="decr(item.qty, i)"><i class="bi bi-dash-square"></i></button>
                         <input type="number" class="" min="1" max="5" [(ngModel)]="item.qty"  (ngModelChange)="qntUpdate($event)">
-                        <button class="btn btn-xs"><i class="bi bi-plus" (click)="incre(item.qty, i)"></i></button>
+                        <button class="btn btn-xs"><i class="bi bi-plus-square" (click)="incre(item.qty, i)"></i></button>
                         
                         
                       </div>
-                      <button type="button" class="btn btn-outline-danger btn-xs" (click)="deletei(i)">
+                      <button type="button" class="btn btn-outline btn-xs" (click)="deletei(i)">
                         <i class="bi bi-trash-fill" aria-hidden="true"></i>
                       </button>
                       
@@ -58,13 +58,13 @@
         </div>
     
         <hr>
-                <div class="card-footer">
+                <div class="card-footer d-flex justify-content-center align-items-center">
                   <div class="pull-right">
                     
                     <h4 > Total Amount: <b style="color: red;">{{totalAmount| currency:'R'}}</b></h4>
                  </div>
                   <div class="footr" style="margin: 5px">
-                      <button class="btn btn-warning checkout" routerLink="/checkout" checkout="totalAmount === 0">Checkout</button>
+                      <button class="btn btn-warning checkout" routerLink="/checkout" disabled="totalAmount === 0">Checkout</button>
                      
                   </div>
                 </div>
@@ -73,16 +73,4 @@
   </main>
 
   <!-- footer -->
-  <div class="footer sticky mt-auto pt-1 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col d-flex justify-content-between d-block d-sm-none">
-          <i class="bi bi-house-door"></i>
-          <i class="bi bi-bag"></i>
-          <i class="bi bi-heart"></i>
-          <i class="bi bi-person-fill"></i>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+  <app-footernav></app-footernav>
