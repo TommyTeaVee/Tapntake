@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path:'checkout', component: CheckoutComponent
   },
+  {
+    path:'thankyou', component: CheckoutComponent
+  },
+  
   
   
 ];
