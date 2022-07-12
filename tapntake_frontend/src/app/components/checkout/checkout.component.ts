@@ -25,6 +25,7 @@ export class CheckoutComponent implements OnInit {
 	responseMessage?: string; // the response message to show to the user
   servicefee  = 2
   totalAmount = JSON.parse(`${localStorage.getItem('Total')}`) 
+  dataForm = JSON.parse(`${localStorage.getItem('form')}`)
 
   
   constructor(private router : Router, private cartService: CartService, private http: HttpClient,private fb: FormBuilder) {
@@ -39,7 +40,7 @@ export class CheckoutComponent implements OnInit {
    }
 
   ngOnInit(): void {
-   
+   console.log(this.dataForm)
   }
 //   signIn() {
 //     let formData = JSON.parse(`${localStorage.getItem('users')}`);
@@ -56,6 +57,9 @@ export class CheckoutComponent implements OnInit {
 
 onSubmit() {
   console.log("Just Testing")
+  setTimeout(() => {
+    window.location.replace('/thankyou')
+  }, 3500);
   if (this.userForm.status == "VALID" && this.honeypot.value == "") {
     this.userForm.disable(); // disable the form if it's valid to disable multiple submissions
     var formData: any = new FormData();

@@ -23,10 +23,12 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     this.getItems()
     this.Total()
+    
   }
   getItems(){
     
         this.items = this.cartService.getItems();
+        localStorage.setItem('form', JSON.stringify(this.items))
   }
   Total() {
     this.totalAmount = 0
@@ -34,6 +36,7 @@ export class CartComponent implements OnInit {
       this.totalAmount += (item.qty * item.price)
       localStorage.setItem('Total',JSON.stringify(this.totalAmount))
     })
+    
   }
   deletei(i: number): void {
     this.items.splice(i, 1);
@@ -63,5 +66,6 @@ export class CartComponent implements OnInit {
 
   goBack(){
     this.location.back()
+    // window.location.replace('/')
   }
 }
