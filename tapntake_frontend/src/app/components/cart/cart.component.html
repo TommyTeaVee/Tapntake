@@ -30,12 +30,12 @@
                 </div>
             </div>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-7 pt-2">
                 <div class="card-body">
-                    <p class="card-text">{{item.name}}</p>
+                    <h5 class="card-text">{{item.name}}</h5>
 
-                    <p>{{item.dec}}</p>
-                    <div class="d-flex justify-content-between align-items-center">
+                    
+                    <div class="d-flex justify-content-between align-items-center pb-3 px-1">
                       <h2 class="price">{{item.price | currency:'R'}}</h2>
                       <div class="btn-group justify-content-between">
                         <button class="btn btn-xs"(click)="decr(item.qty, i)"><i class="bi bi-dash-square"></i></button>
@@ -49,6 +49,8 @@
                       </button>
                       
                     </div>
+                    <h6>Product Discription:</h6>
+                    <p>{{item.dec}}</p>
                   </div>
             </div>
                 

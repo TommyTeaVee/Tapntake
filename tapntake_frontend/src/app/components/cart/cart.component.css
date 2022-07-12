@@ -93,6 +93,7 @@ button{
      .wrapper{
        display: flex;
        justify-content: space-around;
+       margin-top: 1rem;
      }
      .bi-arrow-right{
        font-size: 2rem;
@@ -181,7 +182,8 @@ button{
      }
      .price{
        margin-top: 15px;
-       font-size: 1rem;
+       font-size: 1.2rem;
+       font-weight: bolder;
        color: red;
      }
      /* .bi-plus-square{
@@ -199,10 +201,14 @@ button{
       
     }
    .card-text{
-    font-size: .9rem;
     font-weight: 400;
     margin-bottom: 0;
    }
    .card-footer{
     flex-direction: column;
+   }
+   h6{
+    margin-bottom: 0;
+    font-weight: bolder;
+
    }

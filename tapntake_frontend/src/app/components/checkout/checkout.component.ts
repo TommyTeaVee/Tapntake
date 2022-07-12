@@ -54,8 +54,10 @@ export class CheckoutComponent implements OnInit {
 //     }
    
 // }
-
-onSubmit() {
+resetting() {
+  this.userForm.reset()
+}
+onSubmit(): void {
   console.log("Just Testing")
   setTimeout(() => {
     window.location.replace('/thankyou')
