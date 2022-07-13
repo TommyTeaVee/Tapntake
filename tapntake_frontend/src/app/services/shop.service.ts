@@ -15,4 +15,28 @@ export class ShopService {
   getAll(): Observable<Shop[]> {
     return this.http.get<Shop[]>(`${baseUrl}`)
   }
+  get(id: any): Observable<Shop> {
+    return this.http.get(`${baseUrl}/${id}`);
+  }
+
+  create(data: Shop): Observable<Shop> {
+    return this.http.post(baseUrl, data);
+  }
+
+  update(id: any, data: any): Observable<any> {
+    return this.http.put(`${baseUrl}/${id}`, data);
+  }
+
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${baseUrl}/${id}`);
+  }
+
+  deleteAll(): Observable<any> {
+    return this.http.delete(baseUrl);
+  }
+
+  findByTitle(name: any): Observable<Shop[]> {
+    return this.http.get<Shop[]>(`${baseUrl}?name=${name}`);
+  }
+
 }
