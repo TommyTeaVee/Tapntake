@@ -17,6 +17,7 @@ import { FooternavComponent } from './components/footernav/footernav.component';
 import { AddShopComponent } from './components/add-shop/add-shop.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
 // import { LoginComponent } from './components/login/login.component';
 // import { RegisterComponent } from './components/register/register.component';
 
@@ -36,6 +37,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AddShopComponent,
     AddProductComponent,
     DashboardComponent,
+    ProductListComponent,
     // LoginComponent,
     // RegisterComponent
   ],

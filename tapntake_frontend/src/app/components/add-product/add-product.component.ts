@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-
+  prdct?: Product[] 
   product: Product = {
     name: '',
     des: '',
@@ -59,4 +59,8 @@ export class AddProductComponent implements OnInit {
 
   };
 }
+
+
 }
+
+
