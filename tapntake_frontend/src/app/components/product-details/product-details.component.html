@@ -1,0 +1,80 @@
+<div *ngIf="product">
+    Hello {{product.name}}
+</div>
+
+<!-- <div *ngIf="viewMode; else elseBlock">
+    <div *ngIf="currentProduct.id">
+      <h4>Tutorial</h4>
+      <div>
+        <label><strong>Title:</strong></label> {{ currentProduct.name }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentProduct.des }}
+      </div>
+      <div>
+       
+  
+      <a
+        class="badge badge-warning"
+        routerLink="/productdet/{{ currentProduct.id }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentProduct">
+      <br />
+      <p>Please click on a Tutorial...</p>
+    </div>
+  </div>
+</div> 
+  <ng-template #elseBlock>
+    <div *ngIf="currentProduct.id" class="edit-form">
+      <h4>Tutorial</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentProduct.name"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentProduct.des"
+            name="description"
+          />
+        </div>
+  
+        
+      </form>
+      
+  
+      <button class="badge badge-danger mr-2" (click)="deleteProduct()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateProduct()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentProduct.id">
+      <br />
+      <p>Cannot access this product...</p>
+    </div>
+  </ng-template>
+   -->

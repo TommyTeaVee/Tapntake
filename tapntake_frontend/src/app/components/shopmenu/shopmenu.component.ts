@@ -12,6 +12,9 @@ import { CartService } from 'src/app/services/cart.service';
 export class ShopmenuComponent implements OnInit {
   public totalItems :any
   products: Product[] = []
+  currentProduct= {}
+  currentIndex = -1
+  name=""
   constructor( private productService: ProductsService, private route: ActivatedRoute, private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -34,5 +37,18 @@ export class ShopmenuComponent implements OnInit {
       },
       error: e => console.error(e)
     })
+  }
+  searchName(): void {
+    this.currentProduct = {};
+    this.currentIndex = -1;
+
+    this.productService.findByTitle(this.name)
+      .subscribe({
+        next: (data) => {
+          this.products = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
   }
 }

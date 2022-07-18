@@ -9,7 +9,7 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import { AddShopComponent } from './components/add-shop/add-shop.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 // import {OrderComponent} from './components/order/order.component'
 // import { CheckoutComponent } from './components/checkout/checkout.component';
@@ -41,6 +41,9 @@ const routes: Routes = [
   },
   {
     path: 'dashboard', component: DashboardComponent 
+  },
+  {
+    path: 'productdet/:id', component: ProductDetailsComponent 
   }
   
   

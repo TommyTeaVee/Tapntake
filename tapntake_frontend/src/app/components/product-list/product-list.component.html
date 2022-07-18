@@ -1,6 +1,6 @@
 <div class="list row">
     <div class="col-md-8">
-      <div class="input-group mb-3">
+      <div class="input-group my-3">
         <input
           type="text"
           class="form-control"
@@ -11,7 +11,7 @@
           <button
             class="btn btn-outline-secondary"
             type="button"
-            
+            (click)="searchName()"
           >
             Search
           </button>
@@ -25,18 +25,26 @@
           class="list-group-item"
           *ngFor="let product of products; let i = index"
           [class.active]="i == currentIndex"
+          (click)="setActiveTutorial(product, i)"
           
         >
-          {{ product.name}}
-        </li>
+        {{ product.name}}
+          
+      </li>
       </ul>
   
-      <button class="m-3 btn btn-sm btn-danger">
+      <button class="my-3 btn btn-sm btn-danger" (click)="removeAllProducts()">
         Remove All
       </button>
     </div>
-    <div class="col-md-6">
-      
+    <div class="col-6">
+      <app-product-details>
+        <!-- [viewMode]="true" -->
+        [product]="currentProduct"
+      </app-product-details>
+      <h4>Details of each product</h4>
+      {{currentProduct.name}}
+      {{currentProduct.price}}
     </div>
   </div>
   

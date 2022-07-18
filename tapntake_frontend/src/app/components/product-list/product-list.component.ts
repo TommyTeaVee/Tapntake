@@ -30,4 +30,42 @@ export class ProductListComponent implements OnInit {
       error: e => console.error(e)
     })
   }
+
+  refreshList(): void {
+    this.getAll();
+    this.currentProduct = {};
+    this.currentIndex = -1;
+  }
+
+  setActiveTutorial(product: any, index: number): void {
+    this.currentProduct = product;
+    this.currentIndex = index;
+    console.log("We are here")
+  }
+
+  removeAllProducts(): void {
+    this.productsService.deleteAll()
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          this.refreshList();
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
+  searchName(): void {
+    this.currentProduct = {};
+    this.currentIndex = -1;
+
+    this.productsService.findByTitle(this.name)
+      .subscribe({
+        next: (data) => {
+          this.products = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
+  }
+
 }

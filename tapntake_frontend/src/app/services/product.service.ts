@@ -37,6 +37,6 @@ export class ProductsService {
   }
 
   findByTitle(name: any): Observable<Product[]> {
-    return this.http.get<Product[]>(`${baseUrl}?name=${name}`);
+    return this.http.get<Product[]>(`${baseUrl}/all/?name=${name}`);
   }
 }
