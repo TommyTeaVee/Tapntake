@@ -16,5 +16,7 @@ module.exports = app => {
 
     router.delete('/:id', product.delete)
 
+    router.delete('/:id/all', product.deleteAll) //Shop id
+
     app.use('/api/menu', router)
 }

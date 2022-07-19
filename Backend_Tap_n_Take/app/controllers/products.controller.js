@@ -114,10 +114,28 @@ exports.delete = (req, res) => {
     Product.findByIdAndRemove(id, { useFindAndModify: false })
         .then(data => {
             if(!data) {
-                res.status(404).send({ msg: `Cannot delete Shop with id=${id}. Maybe Shop was not found`})
-            } else res.status(201).send({ msg: 'Shop was deleted successfully!' })
+                res.status(404).send({ msg: `Cannot delete Product with id=${id}. Maybe Shop was not found`})
+            } else res.status(201).send({ msg: 'Product was deleted successfully!' })
         })
         .catch( err => {
             res.status(500).send({ msg: `Could not delete Shop with id=${id}` })
         })
+}
+
+//Delete all products for a shop
+exports.deleteAll = (req, res) => {
+    
+    Product.deleteMany({shopId:req.params.id})
+        .then(data => {
+            res.status(404).send({ 
+                message: `$(data.deletedCount} Tutorials were deleted successfully !` 
+            });
+           
+        })
+        .catch(err => {
+            res.status(500).send({
+               message:
+                err.message || "Some error occured while removing all tutorials."
+            });
+        });
 }
