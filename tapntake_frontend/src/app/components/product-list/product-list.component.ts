@@ -44,7 +44,8 @@ export class ProductListComponent implements OnInit {
   }
 
   removeAllProducts(): void {
-    this.productsService.deleteAll()
+    const id = this.route.snapshot.paramMap.get('id')
+    this.productsService.deleteAll(id)
       .subscribe({
         next: (res) => {
           console.log(res);
@@ -52,6 +53,8 @@ export class ProductListComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+
+      window.location.reload();
   }
 
   searchName(): void {

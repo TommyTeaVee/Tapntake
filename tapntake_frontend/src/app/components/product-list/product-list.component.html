@@ -1,10 +1,10 @@
-<div class="list row">
-    <div class="col-md-8">
+<div class="list row mt-4 mb-3">
+    <div class="col-sm-6 col-md-6">
       <div class="input-group my-3">
         <input
           type="text"
           class="form-control"
-          placeholder="Search by title"
+          placeholder="Search by name"
           [(ngModel)]="name"
         />
         <div class="input-group-append">
@@ -18,8 +18,9 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <h4>Product List</h4>
+
+    <div class="col-md-6 col-lg-6 plist">
+      <h5>Product List</h5>
       <ul class="list-group">
         <li
           class="list-group-item"
@@ -37,14 +38,23 @@
         Remove All
       </button>
     </div>
-    <div class="col-6">
-      <app-product-details>
-        <!-- [viewMode]="true" -->
-        [product]="currentProduct"
-      </app-product-details>
-      <h4>Details of each product</h4>
-      {{currentProduct.name}}
-      {{currentProduct.price}}
+    <div class="col-md-6 col-lg-6 mt-3">
+      <h5>Details:</h5>
+      <div>
+        <label><strong>Name:</strong></label> {{currentProduct.name}}
+      </div>
+        <div>
+          <label><strong>Price:</strong></label> {{currentProduct.price}}
+        </div>
+        
+        
+        <a
+        class="badge badge-warning edit"
+        routerLink="/productdet/{{ currentProduct.id }}"
+      >
+        Edit
+      </a>
+      
     </div>
   </div>
   

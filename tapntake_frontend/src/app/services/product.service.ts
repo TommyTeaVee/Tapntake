@@ -12,16 +12,16 @@ export class ProductsService {
 
   constructor( private http: HttpClient ) { }
 
-  getAllProducts(id: string | null): Observable<Product[]>{
-    return this.http.get<Product[]>(`${baseUrl}/${id}/all`)
+  getAllProducts(shopId: string | null): Observable<Product[]>{  // SHOP ID 
+    return this.http.get<Product[]>(`${baseUrl}/${shopId}/all`)
   }
 
   get(id: any): Observable<Product> {
     return this.http.get(`${baseUrl}/${id}`);
   }
 
-  create(data: Product, id: any): Observable<Product> {
-    return this.http.post(`${baseUrl}/${id}`, data);
+  create(data: Product, shopId: any): Observable<Product> {  // SHOP ID
+    return this.http.post(`${baseUrl}/${shopId}`, data);
   }
 
   update(id: any, data: any): Observable<any> {
@@ -32,8 +32,8 @@ export class ProductsService {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
-  deleteAll(): Observable<any> {
-    return this.http.delete(baseUrl);
+  deleteAll(shopId: any): Observable<Product> {
+    return this.http.delete(`${baseUrl}/${shopId}/all`);
   }
 
   findByTitle(name: any): Observable<Product[]> {

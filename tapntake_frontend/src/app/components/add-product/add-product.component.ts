@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/product';
 import { ProductsService } from 'src/app/services/product.service';
 import { ShopService } from 'src/app/services/shop.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-product',
@@ -10,6 +10,10 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  currentProduct: Product = {};
+  currentIndex = -1;
+  name = '';
+
   prdct?: Product[] 
   product: Product = {
     name: '',
@@ -21,7 +25,7 @@ export class AddProductComponent implements OnInit {
   };
   shopId: any
   submitted = false;
-  constructor(private productsService: ProductsService , private shopService: ShopService, private route: ActivatedRoute ) { }
+  constructor(private productsService: ProductsService , private shopService: ShopService, private route: ActivatedRoute, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -47,6 +51,12 @@ export class AddProductComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+
+      window.location.reload()
+      // let currentUrl = this.router.url
+      // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      //   this.router.navigate([currentUrl])
+      // })
 }
 
      newProduct(): void {
@@ -59,7 +69,19 @@ export class AddProductComponent implements OnInit {
 
   };
 }
+searchName(): void {
+  this.currentProduct = {};
+  this.currentIndex = -1;
 
+  this.productsService.findByTitle(this.name)
+    .subscribe({
+      next: (data) => {
+        this.prdct = data;
+        console.log(data);
+      },
+      error: (e) => console.error(e)
+    });
+}
 
 }
 
