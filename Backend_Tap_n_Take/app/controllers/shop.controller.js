@@ -1,30 +1,30 @@
 const db = require('../models')
 const Shop = db.shop
 
-exports.create = (req, res) => {
-    console.log(req.body)
-    if (!req.body) {
-        res.status(400).send({ message: "Content can not be empty!" });
-        return;
-      }
+// exports.create = (req, res) => {
+//     console.log(req.body)
+//     if (!req.body) {
+//         res.status(400).send({ message: "Content can not be empty!" });
+//         return;
+//       }
 
-    const shop = new Shop({
-        name: req.body.name,
-        img: req.body.img,
-        email: req.body.email
-    })
+//     const shop = new Shop({
+//         name: req.body.name,
+//         img: req.body.img,
+//         email: req.body.email
+//     })
 
-    shop
-        .save(shop)
-        .then(data => {
-            res.send(data)
-        })
-        .catch(err => {
-            res.status(500).send({
-                msg: err.message || "Some error"
-            })
-        })
-}
+//     shop
+//         .save(shop)
+//         .then(data => {
+//             res.send(data)
+//         })
+//         .catch(err => {
+//             res.status(500).send({
+//                 msg: err.message || "Some error"
+//             })
+//         })
+// }
 
 exports.findAll = (req, res) => {
     const name = req.query.name

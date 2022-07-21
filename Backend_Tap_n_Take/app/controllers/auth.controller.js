@@ -1,12 +1,11 @@
 const config = require('../config/auth.config')
 const db = require('../models')
-const User = db.user
-const Role = db.role
+const Shop = db.shop
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 
 exports.signup = (req, res) => {
-    const user = new User({
+    const shop = new Shop({
 
         name: req.body.name,
         email: req.body.email,
@@ -14,75 +13,41 @@ exports.signup = (req, res) => {
         password: bcrypt.hashSync(req.body.password, 10)
     })
 
-    user.save((err, user) => {
+    shop.save((err, shop) => {
 
         if(err) {
             res.status({ msg: err })
             return
         }
-        // if(req.body.roles){
-        //     Role.find({
-        //         name: { $in: req.body.roles }
-        //     },
-        //     (err, roles) => {
-        //         if(err){
-        //             res.status(500).send({ msg: err })
-        //             return
-        //         }
-        //         user.roles = roles.map(role => role._id);
-        //         user.save(err => {
-        //             if(err){
-        //                 res.status(500).send({ msg: err })
-        //                 return
-        //             }
+        res.send(shop)
 
-        //             res.send({ msg: "User was registered successfully!" })
-        //         })
-        //     })
-        // } else {
-        //     Role.findOne({ name: "user" }, (err, user) => {
-        //         if(err){
-        //             res.status(500).send({ msg: err })
-        //             return
-        //         }
-
-        //         user.roles = [Role._id];
-        //         user.save(err => {
-        //             if(err){
-        //                 res.status(500).send({ msg: err })
-        //                 return
-        //             }
-                    
-        //             res.send({ msg: "User was registered successfully!" })
-        //         })
-        //     })
-        // }
+        
     })
 }
 
 exports.signin = (req, res) => {
 
-    User.findOne({
-        username: req.body.username
+    Shop.findOne({
+        name: req.body.name
     })
     // .populate("roles", "-__v")
-    .exec((err, user) => {
+    .exec((err, shop) => {
         if(err){
             res.status(500).send({ msg: err})
             return
         }
-        if(!user){
-            return res.status(404).send({ msg: "User not found!" })
+        if(!shop){
+            return res.status(404).send({ msg: "Shop not found!" })
         }
 
-        let passwordIsValid = bcrypt.compareSync(req.body.password, user.password)
+        let passwordIsValid = bcrypt.compareSync(req.body.password, shop.password)
         if(!passwordIsValid){
             return res.status(401).send({
                 accessToken: null,
                 msg: "Invalid Password"
             })
         }
-        let token = jwt.sign({ id: user.id}, config.secrete, {
+        let token = jwt.sign({ id: shop.id}, config.secrete, {
             expiresIn: 86400
         })
         // console.log(user.roles)
@@ -91,9 +56,9 @@ exports.signin = (req, res) => {
         //     authorities.push("Role_"+user.roles[i].name.toUpperCase())
         // }
         res.status(200).send({
-            id: user._id,
-            username: user.username,
-            email: user.email,
+            id: shop._id,
+            name: shop.name,
+            email: shop.email,
             // roles: authorities,
             accessToken: token
         })

@@ -43,6 +43,7 @@ export class AddProductComponent implements OnInit {
     };
 
     this.shopId = this.route.snapshot.paramMap.get('id')
+    console.log(this.shopId)
     this.productsService.create(data, this.shopId)
       .subscribe({
         next: (res) => {
@@ -52,7 +53,7 @@ export class AddProductComponent implements OnInit {
         error: (e) => console.error(e)
       });
 
-      window.location.reload()
+      // window.location.reload()
       // let currentUrl = this.router.url
       // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       //   this.router.navigate([currentUrl])

@@ -7,13 +7,16 @@ const User = mongoose.model(
         name: String,
         email: String,
         password: String,
-        img: String,
-        roles: [
-            {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'Role'
-            }
-        ]
+        img: {
+            type: String,
+            default: "https://www.thesait.org.za/global_graphics/default-store-350x350.jpg"
+        },
+        // roles: [
+        //     {
+        //         type: mongoose.Schema.Types.ObjectId,
+        //         ref: 'Role'
+        //     }
+        // ]
     })
 )
 

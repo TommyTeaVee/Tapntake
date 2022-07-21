@@ -3,7 +3,12 @@ module.exports = mongoose => {
         {
             name: String,
             img: String,
-            email: String
+            email: String,
+            password: String,
+            img: {
+                type: String,
+                default: "https://www.thesait.org.za/global_graphics/default-store-350x350.jpg"
+            }
         }
     );
 

@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ShopService } from 'src/app/services/shop.service';
 import { Shop } from '../../shop';
@@ -9,14 +10,17 @@ import { Shop } from '../../shop';
 })
 export class HomeComponent implements OnInit {
   token = window.sessionStorage.getItem("auth-user") ? JSON.parse(`${window.sessionStorage.getItem('auth-user')}`)  : 0
+  
+  
   shops: Shop[] = [];
   constructor( private shopService: ShopService ) { }
   ngOnInit(): void {
     this.getShops()
   }
-
+  
 
   getShops(): void {
+    
     this.shopService.getAll().subscribe({
       next: (data) => {
         this.shops = data;

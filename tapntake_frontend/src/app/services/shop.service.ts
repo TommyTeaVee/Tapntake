@@ -9,11 +9,14 @@ const baseUrl = 'http://localhost:8000/api/shops'
   providedIn: 'root'
 })
 export class ShopService {
-
+  accessToken = window.sessionStorage.getItem("auth-token")
+  httpOptions = {
+    headers: new HttpHeaders({'x-access-token': `${this.accessToken}`})
+  };
   constructor( private http: HttpClient ) { }
 
   getAll(): Observable<Shop[]> {
-    return this.http.get<Shop[]>(`${baseUrl}`)
+    return this.http.get<Shop[]>(`${baseUrl}`, this.httpOptions)
   }
   get(id: any): Observable<Shop> {
     return this.http.get(`${baseUrl}/${id}`);

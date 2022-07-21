@@ -18,7 +18,7 @@ const { count } = require('./app/models/user.model')
 const Role = db.role
 
 require("./app/routes/auth.router")(app)
-require("./app/routes/user.router")(app)
+// require("./app/routes/user.router")(app)
 require('./app/routes/shop.router')(app)
 require('./app/routes/products.router')(app)
 
@@ -28,7 +28,7 @@ db.mongoose.connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`
 })
 .then(() => {
     console.log("Successfully connected with MongoDB")
-    initial()
+    // initial()
 
     }).catch(err => {
         console.error('Connection error:', err)
@@ -36,38 +36,38 @@ db.mongoose.connect(`mongodb://${dbConfig.HOST}:${dbConfig.PORT}/${dbConfig.DB}`
     })
 
 
-function initial(){
-    Role.estimatedDocumentCount((err, count) => {
-        if(!err && count === 0){
-            new Role({
-                name: 'user'
-            }).save(err => {
-                if(err){
-                    console.log('error', err)
-                }
-                console.log("Added 'user' to roles collection")
-            })
+// function initial(){
+//     Role.estimatedDocumentCount((err, count) => {
+//         if(!err && count === 0){
+//             new Role({
+//                 name: 'user'
+//             }).save(err => {
+//                 if(err){
+//                     console.log('error', err)
+//                 }
+//                 console.log("Added 'user' to roles collection")
+//             })
 
-            new Role({
-                name: 'moderator'
-            }).save(err => {
-                if(err){
-                    console.log('error', err)
-                }
-                console.log("Added 'moderator' to roles collection")
-            })
+//             new Role({
+//                 name: 'moderator'
+//             }).save(err => {
+//                 if(err){
+//                     console.log('error', err)
+//                 }
+//                 console.log("Added 'moderator' to roles collection")
+//             })
 
-            new Role({
-                name: 'admin'
-            }).save(err => {
-                if(err){
-                    console.log('error', err)
-                }
-                console.log("Added 'admin' to roles collection")
-            })
-        }
-    })
-}
+//             new Role({
+//                 name: 'admin'
+//             }).save(err => {
+//                 if(err){
+//                     console.log('error', err)
+//                 }
+//                 console.log("Added 'admin' to roles collection")
+//             })
+//         }
+//     })
+// }
 
 app.get('/', (req, res, next) => {
     res.send('<h1>Hello world<h1>');

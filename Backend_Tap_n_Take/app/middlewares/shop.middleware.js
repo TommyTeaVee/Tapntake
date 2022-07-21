@@ -1,7 +1,7 @@
 const db = require('../models')
 const Shop = db.shop
 
-let getShop = async (req, res, next) => {
+const getShop = async (req, res, next) => {
     let shop
     let id = req.params.id
     try {
@@ -27,4 +27,7 @@ let getShop = async (req, res, next) => {
     
 }
 
-module.exports = getShop
+const shop = {
+    getShop
+}
+module.exports = shop

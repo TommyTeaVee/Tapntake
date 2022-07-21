@@ -3,7 +3,7 @@ module.exports = app => {
 
     const router = require('express').Router() 
 
-    router.post('/', shop.create)
+    // router.post('/', shop.create)
 
     router.get('/', shop.findAll)
 
