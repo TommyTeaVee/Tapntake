@@ -8,10 +8,9 @@ import { Shop } from '../../shop';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  token = window.sessionStorage.getItem("auth-user") ? JSON.parse(`${window.sessionStorage.getItem('auth-user')}`)  : 0
   shops: Shop[] = [];
   constructor( private shopService: ShopService ) { }
-
   ngOnInit(): void {
     this.getShops()
   }

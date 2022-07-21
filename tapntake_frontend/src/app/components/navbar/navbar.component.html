@@ -9,13 +9,23 @@
                 <a class="nav-link" aria-current="page" routerLink="/home">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/cart" >Cart</a>
+                <a class="nav-link" routerLink="/cart">Cart</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/home">Favourites</a>
+                <a class="nav-link" routerLink="/login" >Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" routerLink="/home">Profile</a>
+                <a class="nav-link" routerLink="/register">Signup</a>
+              </li>
+              
+              
+            </ul>
+            <ul class="navbar-nav d-inline" *ngIf="isLoggedIn">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/addshop">Add shop</a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link" (click)="logout()">LogOut</a>
               </li>
             </ul>
           </div>
