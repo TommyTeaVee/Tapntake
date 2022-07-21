@@ -12,9 +12,9 @@
 <main>
   <div class="container mb-5 px-4">
     <div class="row g-3 wrapper">
-      <div class="col col-sm-4 col-md-4 b-5" *ngFor="let shop of shops">
+      <div class="col col-sm-4 col-md-4 b-5 mb-3" *ngFor="let shop of shops">
+        <a routerLink="/addproduct/{{shop.id}}" *ngIf="token.id == shop.id" title="add-product"><i class="bi bi-plus-square"></i></a>
         <div class="card ">
-          <a routerLink="/addproduct/{{shop.id}}" *ngIf="token.id == shop.id" title="add-product"><i class="bi bi-plus-square"></i></a>
           <img src={{shop.img}} alt="">
           <div class="imgText">
             <a routerLink="/menu/{{shop.id}}">
