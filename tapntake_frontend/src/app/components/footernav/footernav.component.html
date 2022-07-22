@@ -1,17 +1,33 @@
-<div class="footer pt-1 bg-light">
+<div class="footer pt-1 bg-light mt-2">
     <div class="container-fluid">
       <div class="row">
         <div class="col d-flex justify-content-between d-block d-md-none">
           <a routerLink="/home"><i class="bi bi-house-door"></i></a>
           <a routerLink="/cart"><i class="bi bi-bag"></i><span class="badge badge-light">{{totalItems.length}}</span></a>
-          <i class="bi bi-heart"></i>
           <a><i class="bi bi-person-fill" routerLink="/dashboard"></i></a>
+          <div class="dropup ">
+            <a class="dropdown-toggle text-align" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-three-dots-vertical"></i></a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+                <li><a class="dropdown-item" routerLink="/register">Register</a></li>
+                <li><a class="dropdown-item" (click)="logout()">Signout</a></li>
+              </ul>
+            
+          </div>
+          
         </div>
         <div class=" d-none d-lg-block d-md-block ">
 
-          <footer class="text-center text-white">
+          <footer class="d-flex justify-content-around text-white">
           <!-- Grid container -->
-          <div class="container">
+          <div class="text-center text-dark copyright">
+            © 2022 Copyright:
+            <a class="text-dark" href="#">SSVK Webworx</a>
+          </div>
+          <div class="subFooter">
+
+            
             <!-- Section: Social media -->
             <section class="mb-1">
               <!-- Facebook -->
@@ -54,10 +70,7 @@
           <!-- Grid container -->
         
           <!-- Copyright -->
-          <div class="text-center text-dark mb-3">
-            © 2022 Copyright:
-            <a class="text-dark" href="#">SSVK Webworx</a>
-          </div>
+          
           <!-- Copyright -->
         </footer>
           
