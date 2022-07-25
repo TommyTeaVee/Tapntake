@@ -6,7 +6,7 @@ import { Product } from '../product';
 export class CartService {
   items: Product[] = [];
   totalAmount = 0
-
+  orderItems = ""
   constructor() { }
   addToCart(product: Product) {
       

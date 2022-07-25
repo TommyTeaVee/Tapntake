@@ -6,7 +6,7 @@ module.exports = mongoose => {
             price: Number,
             shopId: String,
             qty:{
-                type:String,
+                type:Number,
                 default:1
             },
             dec:String

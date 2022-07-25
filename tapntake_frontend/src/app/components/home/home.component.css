@@ -80,3 +80,10 @@ border:inherit;
 .fs{
   font-size: 0.9rem;
 }
+.addbtn{
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 5px;
+  display: block;
+  color: #000000;
+}

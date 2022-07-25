@@ -49,8 +49,12 @@ const routes: Routes = [
     path: 'dashboard', component: DashboardComponent 
   },
   {
-    path: 'productdet/:id', component: ProductDetailsComponent 
+    path: 'productdet/:id', component: AddShopComponent 
   },
+  {
+    path: 'shotdet/:id', component: ProductDetailsComponent 
+  },
+  
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
