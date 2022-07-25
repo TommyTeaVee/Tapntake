@@ -24,7 +24,8 @@ export class CheckoutComponent implements OnInit {
 	isLoading: boolean = false; // disable the submit button if we're loading
 	responseMessage?: string; // the response message to show to the user
   servicefee  = 2
-  totalAmount = JSON.parse(`${localStorage.getItem('Total')}`) 
+  totalAmount = JSON.parse(`${localStorage.getItem('Total')}`)
+  totalItems:any 
   dataForm = JSON.parse(`${localStorage.getItem('form')}`)
 
   
@@ -41,6 +42,8 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
    console.log(this.dataForm)
+   this.totalItems = JSON.parse(`${localStorage.getItem('for')}`)? JSON.parse(`${localStorage.getItem('for')}`): []
+   console.log(this.totalItems)
   }
 //   signIn() {
 //     let formData = JSON.parse(`${localStorage.getItem('users')}`);
@@ -70,6 +73,8 @@ onSubmit(): void {
     formData.append("number", this.userForm.get("number")?.value);
     formData.append("email", this.userForm.get("email")?.value);
     formData.append("total", this.totalAmount + this.servicefee);
+    // formData.append("total", this.totalItems.name);
+    
     
     
     this.isLoading = true; // sending the post request async so it's in progress

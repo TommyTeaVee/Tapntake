@@ -3,8 +3,8 @@
 <div class="p-3 mb-3 bg-light rounded-3">
   <div class="container py-2">
     <h1 class="display-2 fw-bold">Tap n' Take</h1>
-    <p class="col-md-8 fs">Automate order management and marketing campaigns to scale up
-      your online food business.</p>
+    <p class="col-md-8 fs">Automate order management to scale up
+      your online business.</p>
   </div>
 </div>
 
@@ -13,8 +13,10 @@
   <div class="container mb-5 px-4">
     <div class="row g-3 wrapper">
       <div class="col col-sm-4 col-md-4 b-5 mb-3" *ngFor="let shop of shops">
-        <a routerLink="/addproduct/{{shop.id}}" *ngIf="token.id == shop.id" title="add-product"><i class="bi bi-plus-square"></i></a>
+        
         <div class="card">
+          
+          <a class="addbtn" routerLink="/addproduct/{{shop.id}}" *ngIf="token.id == shop.id" title="add-product"><i class="bi bi-plus-square"></i></a>
           <img src={{shop.img}} alt="">
           <div class="imgText">
             <a routerLink="/menu/{{shop.id}}">

@@ -14,7 +14,10 @@ export class CartComponent implements OnInit {
   product !: Product
   total:any
   items: any
+  products: any[] = []
   totalAmount = this.cartService.totalAmount
+  orderItems = this.cartService.orderItems
+  
   constructor(private cartService: CartService, 
     private router : Router, 
     private activated: ActivatedRoute,
@@ -26,16 +29,19 @@ export class CartComponent implements OnInit {
     
   }
   getItems(){
-    
         this.items = this.cartService.getItems();
-        localStorage.setItem('form', JSON.stringify(this.items))
+      
+        
   }
   Total() {
+    
     this.totalAmount = 0
     this.items.forEach((item: { qty: number; price: number; }) => {
       this.totalAmount += (item.qty * item.price)
       localStorage.setItem('Total',JSON.stringify(this.totalAmount))
+      
     })
+    localStorage.setItem('for', JSON.stringify(this.items))
     
   }
   deletei(i: number): void {
@@ -44,7 +50,7 @@ export class CartComponent implements OnInit {
     this.Total();
   
   }
-  qntUpdate($event: any) {
+  qntUpdate($event: any) { 
     this.Total();
   }
 
