@@ -1,99 +1,126 @@
-<header class="">
-  <nav class="navbar navbar-expand d-flex justify-content-between px-2">
-    <div class="navbar-nav mr-auto">
-      <a class="navbar-brand">Product-Dashboard
-        </a>
-      <li class="nav-item">
-        <a routerLink="/home" class="nav-link text-dark">Home</a>
-      </li>
-      <li class="nav-item">
-        <a routerLink="ad" class="nav-link"></a>
-      </li>
+<header class="mb-3">
+  <nav class="navbar navbar-expand d-flex justify-content-around">
+    <a class="navbar-brand">Dashboard
+    </a>
+    <div class="navbar-nav">
+      
+        <div>
+          <li class="nav-item">
+            <a routerLink="/home" class="nav-link text-dark">Home</a>
+          </li>
+        </div>
+      
+      
     </div>
-    <!-- <div class="input-group my-3">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Search by title"
-        [(ngModel)]="name"
-      />
-      <div class="input-group-append">
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          (click)="searchName()"
-        >
-          Search
-        </button>
-      </div>
-    </div> -->
+   
   </nav>
 </header>
-<div class="container mt-3">
-  <div class="col-md-6 add-product">
-    <h5>Add a product</h5>
-    <div>
-      <div class="submit-form mb-2">
-        <div *ngIf="!submitted">
-          <div class="form-group">
-            <label for="title">Product Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="name"
-              required
-              [(ngModel)]="product.name"
-              name="name"
-            />
+
+
+<div class="container  mt-3">
+  <div class="accordion " id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <span>Add Product</span>
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div class="accordion-body d-flex justify-content-center">
+          <div class="col-md-6 add-product">
+            
+            <div>
+              <div class="submit-form mb-2">
+                <div *ngIf="!submitted">
+                  <div class="form-group">
+                    <label for="title">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      required
+                      [(ngModel)]="product.name"
+                      name="name"
+                    />
+                  </div>
+            
+                  <div class="form-group mt-2">
+                    <label for="description">Description</label>
+                    <input
+                      class="form-control"
+                      id="des"
+                      required
+                      [(ngModel)]="product.des"
+                      name="des"
+                    />
+                  </div>
+          
+                  <div class="form-group mt-2">
+                      <label for="description">Price</label>
+                      <input
+                        class="form-control"
+                        id="price"
+                        required
+                        [(ngModel)]="product.price"
+                        name="price"
+                      />
+                    </div>
+          
+                  <div class="form-group mt-2">
+                      <label for="description">Photo</label>
+                      <input
+                        class="form-control"
+                        id="img"
+                        required
+                        [(ngModel)]="product.img"
+                        name="img"
+                      />
+                    </div>
+            
+                  <button (click)="saveProduct()" class="btn btn-success mt-2">Submit</button>
+                </div>
+            
+                <div *ngIf="submitted">
+                  <h4>Product was added successfully!</h4>
+                  <button class="btn btn-success" (click)="newProduct()">Add</button>
+                  <a routerLink="/menu/{{shopId}}">Menu</a>
+                </div>
+              </div>
           </div>
-    
-          <div class="form-group">
-            <label for="description">Product Description</label>
-            <input
-              class="form-control"
-              id="des"
-              required
-              [(ngModel)]="product.des"
-              name="des"
-            />
+          
           </div>
-  
-          <div class="form-group">
-              <label for="description">Price</label>
-              <input
-                class="form-control"
-                id="price"
-                required
-                [(ngModel)]="product.price"
-                name="price"
-              />
-            </div>
-  
-          <div class="form-group">
-              <label for="description">Photo</label>
-              <input
-                class="form-control"
-                id="img"
-                required
-                [(ngModel)]="product.img"
-                name="img"
-              />
-            </div>
-    
-          <button (click)="saveProduct()" class="btn btn-success mt-2">Submit</button>
-        </div>
-    
-        <div *ngIf="submitted">
-          <h4>Product was added successfully!</h4>
-          <button class="btn btn-success" (click)="newProduct()">Add</button>
-          <a routerLink="/menu/{{shopId}}">Menu</a>
+        
+
         </div>
       </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <span>Product List</span>
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div class="accordion-body d-flex justify-content-center">
+          <app-product-list></app-product-list>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <span>Shop Details</span>
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          <app-add-shop></app-add-shop>
+        </div>
+      </div>
+    </div>
   </div>
   
-  </div>
+  
 
-  <app-product-list></app-product-list>
-
-  <app-add-shop></app-add-shop>
+  
 </div>

@@ -54,10 +54,10 @@ export class AddProductComponent implements OnInit {
       });
 
       // window.location.reload()
-      // let currentUrl = this.router.url
-      // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      //   this.router.navigate([currentUrl])
-      // })
+      let currentUrl = this.router.url
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate([currentUrl])
+      })
 }
 
      newProduct(): void {

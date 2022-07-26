@@ -10,8 +10,8 @@
               <i class="bi bi-three-dots-vertical"></i></a>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" routerLink="/login">Login</a></li>
-                <li><a class="dropdown-item" routerLink="/register">Register</a></li>
-                <li><a class="dropdown-item" (click)="logout()">Signout</a></li>
+                <li><a class="dropdown-item" routerLink="/register">AddShop</a></li>
+                <li *ngIf="isLoggedIn"><a class="dropdown-item" (click)="logout()">Signout</a></li>
               </ul>
             
           </div>

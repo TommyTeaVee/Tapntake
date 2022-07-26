@@ -8,12 +8,17 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class FooternavComponent implements OnInit {
   public totalItems :any
-  
-
+  isLoggedIn = false
+  username = ""
   constructor(private cartService: CartService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     this.totalItems = this.cartService.getItems()
+    this.isLoggedIn = !!this.tokenStorage.getToken()
+    if(this.isLoggedIn){
+      const user = this.tokenStorage.getUser()
+      this.username = user.username
+    }
   }
  
   logout(): void{

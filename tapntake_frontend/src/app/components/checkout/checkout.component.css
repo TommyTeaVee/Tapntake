@@ -150,34 +150,12 @@ main{
      .myb{
        border-radius: 20px
      }
-     /* .pw{
-      padding: 0.5rem;
-     }
-     .pwc{
-       box-sizing: border-box;
-       border-radius: 20px;
-       width: 100%;
-       background-color: #F8F0F0;
-       position: relative;
-       overflow: hidden;
-     } */
      .price{
        line-height: 15px;
        font-size: 15px;
        color: red;
      }
-     /* .bi-plus-square{
-       font-size: 1.5rem;
-     } */
-
-
-     *,
-*:before,
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+    
 
 .navbar-brand{
     font-size: 1.5rem;
@@ -186,8 +164,6 @@ main{
     font-size: 1rem;
 }
 
-.form{}
-   
 
 .contactwrapper{
   padding: 0.6rem;

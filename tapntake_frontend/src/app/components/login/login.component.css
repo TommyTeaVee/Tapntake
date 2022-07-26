@@ -94,10 +94,11 @@ btn2{
     border: none;
     background-color: rgba(221,179,162, 0.938);
 }
-.col span{
-    color: red;
-    font-size: 15px;
-}
+
 .btn2:hover{
     background-color: blue;
+}
+.card{
+    border : none;
+    padding: auto;
 }
