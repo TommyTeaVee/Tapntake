@@ -12,13 +12,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { BoardAdminComponent } from './components/board-admin/board-admin.component';
-import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
-import { BoardUserComponent } from './components/board-user/board-user.component';
-import { ProfileComponent } from './components/profile/profile.component';
-
-// import {OrderComponent} from './components/order/order.component'
-// import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 
@@ -46,10 +39,10 @@ const routes: Routes = [
     path:'addproduct/:id', component: AddProductComponent
   },
   {
-    path: 'dashboard', component: DashboardComponent 
+    path: 'dashboard/', component: DashboardComponent 
   },
   {
-    path: 'productdet/:id', component: AddShopComponent 
+    path: 'productdet/:id', component: ProductDetailsComponent 
   },
   {
     path: 'shotdet/:id', component: ProductDetailsComponent 
@@ -57,10 +50,7 @@ const routes: Routes = [
   
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
-  { path: 'mod', component: BoardModeratorComponent },
-  { path: 'admin', component: BoardAdminComponent },
+
   
   
 ];

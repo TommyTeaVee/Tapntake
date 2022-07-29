@@ -15,7 +15,7 @@ export class ProductDetailsComponent implements OnInit {
 
   @Input() currentProduct: Product={
     name: '',
-    des: '',
+    dec: '',
     price:0,
     img:''
   };
@@ -64,8 +64,7 @@ export class ProductDetailsComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-
-          this.router.navigate(['/addproduct/{{shop.id}}']);
+          this.goBack()
         },
         error: (e) => console.error(e)
       });

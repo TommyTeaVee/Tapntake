@@ -27,18 +27,20 @@ export class CheckoutComponent implements OnInit {
   totalAmount = JSON.parse(`${localStorage.getItem('Total')}`)
   totalItems:any 
   dataForm = JSON.parse(`${localStorage.getItem('form')}`)
-
+  totalItem:any
   
   constructor(private router : Router, private cartService: CartService, private http: HttpClient,private fb: FormBuilder) {
-      this.userForm = this.fb.group({
-        name: this.name,
-        email: this.email,
-        message: this.message,
-        number: this.number,
-        honeypot: this.honeypot,
-        
-      });
+    this.userForm = this.fb.group({
+      name: this.name,
+      email: this.email,
+      message: this.message,
+      number: this.number,
+      honeypot: this.honeypot,
+      
+    });
    }
+
+   
 
   ngOnInit(): void {
    console.log(this.dataForm)
@@ -73,6 +75,13 @@ onSubmit(): void {
     formData.append("number", this.userForm.get("number")?.value);
     formData.append("email", this.userForm.get("email")?.value);
     formData.append("total", this.totalAmount + this.servicefee);
+    
+    this.totalItems.map((item: any) => {
+      formData.append("item", item.name)
+      formData.append("quantity", item.qty)
+
+    })
+    
     // formData.append("total", this.totalItems.name);
     
     

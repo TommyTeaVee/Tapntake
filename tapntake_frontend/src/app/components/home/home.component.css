@@ -34,16 +34,27 @@
   line-height: 2rem;
   padding-right:2rem;
 }
-.bi-plus-square {
+.bi-box-arrow-in-right {
+  font-size: 1rem;
+  position: relative;
+  top: 10%;
+  left: 10%;
   color: #ffffff;
   font-weight: bold;
+  border-radius: 50% !important;
 }
+
 .addbtn{
-  /* width: 17px;
-  height: 16px;
-  
-  background: rgba(97, 113, 146, 0.53); */
+  width: 25px;
+  height: 25px;
+  background: rgba(100, 123, 168, 0.53);
+  border-radius: 50%;
+  box-shadow: 0 0 10px #81AE9D;
 }
+
+
+
+
 
 .search { 
 position: relative; 

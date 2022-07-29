@@ -17,7 +17,7 @@ export class AddProductComponent implements OnInit {
   prdct?: Product[] 
   product: Product = {
     name: '',
-    des: '',
+    dec: '',
     img: "",
     price: 0,
     shopId:""
@@ -37,7 +37,7 @@ export class AddProductComponent implements OnInit {
     // }, 1500)
     const data = {
       name: this.product.name,
-      des: this.product.des,
+      dec: this.product.dec,
       img: this.product.img,
       price: this.product.price
     };
@@ -52,7 +52,7 @@ export class AddProductComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
-
+      
       // window.location.reload()
       let currentUrl = this.router.url
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
@@ -64,7 +64,7 @@ export class AddProductComponent implements OnInit {
      this.submitted = false;
      this.product = {
       name: '',
-      des: '',
+      dec: "",
       img: "",
       price:0,
 

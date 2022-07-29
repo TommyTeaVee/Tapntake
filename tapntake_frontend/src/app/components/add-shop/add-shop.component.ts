@@ -84,4 +84,8 @@ updateShop(): void {
     });
 }
 
+fileUpload(): void{
+  
+}
+
 }

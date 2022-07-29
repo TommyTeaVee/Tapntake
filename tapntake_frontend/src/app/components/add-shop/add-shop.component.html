@@ -28,12 +28,13 @@
 
         <div class="form-group">
             <label for="description">Photo</label>
-            <input
+            <input type="file"
               class="form-control"
               id="img"
               required
               [(ngModel)]="currentShop.img"
               name="img"
+              (change)="fileUpload()"
             />
           </div>
           <div>

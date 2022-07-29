@@ -16,7 +16,7 @@
         
         <div class="card">
           
-          <a class="addbtn" routerLink="/addproduct/{{shop.id}}" *ngIf="token.id == shop.id" title="add-product"><i class="bi bi-plus-square"></i></a>
+          <a class="addbtn" routerLink="/addproduct/{{shop.id}}" *ngIf="token.id == shop.id" title="add-product"><i class="bi bi-box-arrow-in-right"></i></a>
           <img [src]="shop.img" alt="">
           <div class="imgText">
             <a routerLink="/menu/{{shop.id}}">

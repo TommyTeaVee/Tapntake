@@ -24,24 +24,17 @@
     
     border-radius: 50%;
 }
-.bi-house-door{
+.bi-house-door, .bi-bag{
     font-size: 1.5rem;
     
   }
-.bi-bag{
-    font-size: 1.5rem;
-    }
 .bi-heart{
-      margin-top: 1px;
-    font-size: 1.5rem;
-    }
-.bi-person-fill{
+    margin-top: 1px;
     font-size: 1.5rem;
     }
   .bi-three-dots-vertical{
     font-size: 1.3rem;
   }
-
     .btn{
       color: black;
     }

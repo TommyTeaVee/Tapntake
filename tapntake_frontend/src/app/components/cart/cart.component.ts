@@ -12,6 +12,7 @@ import { CheckoutComponent } from '../../components/checkout/checkout.component'
 })
 export class CartComponent implements OnInit {
   product !: Product
+  totalItems :any
   total:any
   items: any
   products: any[] = []
@@ -24,6 +25,7 @@ export class CartComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit(): void {
+    this.totalItems = this.cartService.getItems()
     this.getItems()
     this.Total()
     

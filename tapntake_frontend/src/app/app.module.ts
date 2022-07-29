@@ -22,10 +22,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { RegisterComponent } from './components/register/register.component';
 
 import { LoginComponent } from './components/login/login.component';
-import { ProfileComponent } from './components/profile/profile.component';
-import { BoardAdminComponent } from './components/board-admin/board-admin.component';
-import { BoardUserComponent } from './components/board-user/board-user.component';
-import { BoardModeratorComponent } from './components/board-moderator/board-moderator.component';
+
 // import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
@@ -48,10 +45,7 @@ import { BoardModeratorComponent } from './components/board-moderator/board-mode
     
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
-    BoardAdminComponent,
-    BoardUserComponent,
-    BoardModeratorComponent
+
   ],
   imports: [
     BrowserModule,

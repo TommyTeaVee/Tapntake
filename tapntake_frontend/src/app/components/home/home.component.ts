@@ -10,7 +10,9 @@ import { Shop } from '../../shop';
 })
 export class HomeComponent implements OnInit {
   token = window.sessionStorage.getItem("auth-user") ? JSON.parse(`${window.sessionStorage.getItem('auth-user')}`)  : 0
-  
+  currentProduct: Shop = {};
+  currentIndex = -1;
+  name =""
   
   shops: Shop[] = [];
   constructor( private shopService: ShopService ) { }
@@ -29,4 +31,6 @@ export class HomeComponent implements OnInit {
       error: (e) => console.error(e)
     })
   }
+
+ 
 }

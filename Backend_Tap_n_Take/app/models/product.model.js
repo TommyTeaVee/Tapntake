@@ -9,7 +9,7 @@ module.exports = mongoose => {
                 type:Number,
                 default:1
             },
-            des:String
+            dec:String
         },
         { timestamps: true }
     );
