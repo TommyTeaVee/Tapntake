@@ -43,6 +43,14 @@
   font-weight: bold;
   border-radius: 50% !important;
 }
+li {
+  float: left;
+}
+
+li a {
+display: block;
+padding: 8px;
+}
 
 .addbtn{
   width: 25px;

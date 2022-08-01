@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   username?: string
 
   shops: Shop[] = [];
-  currentProduct: Shop = {};
+  currentShop = {};
   currentIndex = -1;
   name =""
 
@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit {
   }
 
   searchName(): void {
-    this.currentProduct = {};
+    this.currentShop = {};
     this.currentIndex = -1;
 
     this.shopService.findByTitle(this.name)

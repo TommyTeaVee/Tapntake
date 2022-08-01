@@ -9,8 +9,8 @@
         <div class=" searchwarapper d-flex justify-content-end">
            <div class="search ">
              <i class="bi bi-search"></i>
-             <input class="form-control sm-2" type="search" placeholder="Search Product" aria-label="Search">
-             <!-- <button class="btn btn-block" (click)="searchName()">Search</button> -->
+             <input class="form-control sm-2" type="search" placeholder="Search Product" [(ngModel)]="name" aria-label="Search">
+             <button class="btn btn-block" (click)="searchName()">Search</button>
            </div>
            </div>
        </nav>

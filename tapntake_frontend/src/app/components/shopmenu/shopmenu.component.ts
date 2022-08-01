@@ -18,7 +18,6 @@ export class ShopmenuComponent implements OnInit {
   currentIndex = -1
   name=""
   currentShop :Shop ={
-    name:""
   }
   constructor( private shopService:ShopService, private productService: ProductsService, private route: ActivatedRoute, private cartService: CartService) { }
 
