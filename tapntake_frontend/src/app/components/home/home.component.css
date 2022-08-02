@@ -1,4 +1,7 @@
-
+.navbar{
+  display: flex;
+  justify-content: center;
+}
 .card {
  position: relative;
  border: 1px solid #81AE9D;
@@ -21,7 +24,6 @@
   background: rgba(97, 113, 146, 0.53);
   border-radius: 25px;
 }
-
 .imgText span{
   font-size: 1rem;
   line-height: 2rem;
@@ -43,6 +45,10 @@
   font-weight: bold;
   border-radius: 50% !important;
 }
+/* .nav-item{
+  margin-left: 1rem;
+} */
+
 li {
   float: left;
 }
@@ -58,28 +64,6 @@ padding: 8px;
   background: rgba(100, 123, 168, 0.53);
   border-radius: 50%;
   box-shadow: 0 0 10px #81AE9D;
-}
-
-
-
-
-
-.search { 
-position: relative; 
-margin: 0 auto ;
-text-align: center;
-}
-
-.search .bi-search { 
-position: absolute;
-top: 12%;
-left: 2px;
-font-size: 1.2rem;
-
-}
-.form-control{
-padding-left: 1.5rem;
-border:inherit;
 }
 
 @media (min-width: 768px) {
@@ -98,4 +82,12 @@ border:inherit;
   margin-top: 5px;
   display: block;
   color: #000000;
+}
+
+@media (min-width:576px) {
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+    
+  }
 }

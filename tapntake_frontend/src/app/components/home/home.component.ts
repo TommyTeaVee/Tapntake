@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { ShopService } from 'src/app/services/shop.service';
 import { Shop } from '../../shop';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import { Shop } from '../../shop';
 })
 export class HomeComponent implements OnInit {
   token = window.sessionStorage.getItem("auth-user") ? JSON.parse(`${window.sessionStorage.getItem('auth-user')}`)  : 0
+  public totalItems :any
   
   isLoggedIn = false
   username?: string
@@ -22,9 +24,12 @@ export class HomeComponent implements OnInit {
   shops: Shop[] = [];
   
 
-  constructor( private shopService: ShopService, private tokenStorage: TokenStorageService ) { }
+  constructor( private shopService: ShopService, 
+               private tokenStorage: TokenStorageService, 
+               private cartService : CartService) { }
 
   ngOnInit(): void {
+    this.totalItems = this.cartService.getItems()
     this.getShops()
   }
   

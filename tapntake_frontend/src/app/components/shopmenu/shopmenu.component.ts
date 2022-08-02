@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CartService } from 'src/app/services/cart.service';
 import { ShopService } from 'src/app/services/shop.service';
 import { Shop } from 'src/app/shop';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-products',
@@ -12,6 +13,9 @@ import { Shop } from 'src/app/shop';
   styleUrls: ['./shopmenu.component.css']
 })
 export class ShopmenuComponent implements OnInit {
+
+  isLoggedIn = false
+  username?: ""
   public totalItems :any
   products: Product[] = []
   currentProduct= {}
@@ -19,9 +23,17 @@ export class ShopmenuComponent implements OnInit {
   name=""
   currentShop :Shop ={
   }
-  constructor( private shopService:ShopService, private productService: ProductsService, private route: ActivatedRoute, private cartService: CartService) { }
+  constructor( private shopService:ShopService, 
+               private productService: ProductsService, 
+               private route: ActivatedRoute, 
+               private cartService: CartService,
+               private tokenStorage : TokenStorageService) { }
 
   ngOnInit(): void {
+    if(this.isLoggedIn){
+      const user = this.tokenStorage.getUser()
+      this.username = user.username
+    }
     this.getAll()
     this.totalItems = this.cartService.getItems()
     this.totalItems.length
@@ -65,5 +77,10 @@ export class ShopmenuComponent implements OnInit {
         },
         error: (e) => console.error(e)
       });
+  }
+
+  logout(): void{
+    this.tokenStorage.signOut()
+    window.location.reload()
   }
 }

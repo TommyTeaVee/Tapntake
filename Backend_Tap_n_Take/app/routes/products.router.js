@@ -1,7 +1,7 @@
-const product = require('../controllers/products.controller.js')
-const { authJwt } = require('../middlewares')
-
 module.exports = function(app) {
+
+    const product = require('../controllers/products.controller.js')
+    const { authJwt } = require('../middlewares')
 
     app.use(function(req, res, next) {
         res.header(

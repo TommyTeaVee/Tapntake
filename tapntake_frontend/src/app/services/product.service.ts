@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../product';
 
-const baseUrl = 'http://localhost:8000/api/menu'
+const baseUrl = 'https://tapntake.herokuapp.com/api/menu'
 const token = window.sessionStorage.getItem("auth-token")
 const httpOptions = {
   headers: new HttpHeaders({ "x-access-token": `${token}`})

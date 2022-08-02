@@ -4,6 +4,7 @@ import { CartService } from '../../services/cart.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CheckoutComponent } from '../../components/checkout/checkout.component'
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +12,8 @@ import { CheckoutComponent } from '../../components/checkout/checkout.component'
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  isLoggedIn = false
+  username? : ""
   product !: Product
   totalItems :any
   total:any
@@ -22,13 +25,23 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService, 
     private router : Router, 
     private activated: ActivatedRoute,
-    private location: Location) { }
+    private location: Location,
+    private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
+
     this.totalItems = this.cartService.getItems()
     this.getItems()
     this.Total()
+    if(this.isLoggedIn){
+      const user = this.tokenStorage.getUser()
+      this.username = user.username
+    }
     
+  }
+  logout(): void{
+    this.tokenStorage.signOut()
+    window.location.reload()
   }
   getItems(){
         this.items = this.cartService.getItems();

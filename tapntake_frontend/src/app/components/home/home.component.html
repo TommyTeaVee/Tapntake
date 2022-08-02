@@ -1,24 +1,24 @@
 <header class="">
   <div class="container">
-    <nav class=" navbar navbar-default justify-content-space">
+    <nav class=" navbar navbar-default d-flex">
       <a class="navbar-brand"><img src="https://i.postimg.cc/WzDN2h29/taskr-removebg-preview.png" 
         alt="" class="tntlogo"></a>
-        <div class="d-none d-md-block d-lg-block" id="navbarNav">
-          <ul class="navbar-nav d-inline">
+        <div class="d-none d-sm-block d-md-block d-lg-block " id="navbarNav">
+          <ul class="navbar-nav d-inline ">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" routerLink="/home">Home</a>
             </li>
+            
             <li class="nav-item">
-              <a class="nav-link" routerLink="/cart">Cart</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/register">AddShop</a>
+              <a class="nav-link" routerLink="/register">Register-Shop</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" routerLink="/login">Login</a>
             </li>
             
-            
+            <li class="nav-item mx-4">
+              <a routerLink="/cart"><i class="bi bi-bag"></i><span class="badge badge-light">{{totalItems.length}}</span></a>
+            </li>
           </ul>
           <ul class="navbar-nav d-inline" *ngIf="isLoggedIn">
             
@@ -27,17 +27,16 @@
             </li>
           </ul>
         </div>
-      <div class="searchwarapper" >
+      <div class="searchwarapper col-12 col-sm-3 col-md-3 col-lg-3" >
          <div class="search input-group">
-           <i class="bi bi-search"></i>
-           <input class="form-control sm-2" type="search" [(ngModel)]="name" placeholder="Search Shop"aria-label="Search">
+           <input class="form-control" type="search" [(ngModel)]="name" placeholder="Search Shop"aria-label="Search">
            <div class="input-group-append">
             <button
               class="btn btn-outline-secondary"
               type="button"
               (click)="searchName()"
             >
-              Search
+            <i class="bi bi-search"></i>
             </button>
          </div>
          </div>
